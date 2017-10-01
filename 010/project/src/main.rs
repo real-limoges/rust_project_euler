@@ -24,18 +24,22 @@ impl Iterator for PrimeNum {
     
     self.curr = new_next;
     
-    Some(self.curr);
+    Some(self.curr)
   }
 }
 
 // Create fuction to serve the primes over. initializes to 1
 fn primes() -> PrimeNum {
-  PrimeNum { curr: 1 }
+  PrimeNum { curr: 2 }
 }
 
 
 fn main() {
-  println!("Hello World!");
-
-
+  let mut summer: u64 = 0;
+  let mut counter: u64 = 0; 
+  for i in primes() {
+    if i < 2000000 { summer += i; counter += 1; }
+    else { break; } 
+  }
+  println!("Sum is {} with {} primes", summer, counter)
 }
