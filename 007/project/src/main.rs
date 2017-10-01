@@ -47,18 +47,16 @@ fn primes() -> PrimeNum {
 
 
 fn main() {
-  let mut summer: u64 = 0;
   let mut counter: u64 = 0;
+  let max_counter: u64 = 10001;
+
 
   for num in primes() {
     counter += 1;
-    summer += num;
 
-    if counter == 3 {
-      break;
+    if counter == max_counter {
+      println!("{:?}", num);
+      return;
     }
   }
-  println!("{:?}", summer);
-  
-
 }
